@@ -3,6 +3,7 @@
 .product {
 	width: 400px;
 	border: 2px solid slategray;
+	margin: 1%;
 }
 
 
@@ -35,3 +36,27 @@ body {
 	font-size: 1.5em;
 	padding: 2%;
 }
+
+/* CARd LAYOUT -----------------------*/
+
+#product-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
