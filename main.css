@@ -48,6 +48,31 @@ body {
 }
 
 
+/* SOLD OUT-------------------*/
+
+/*.sold-out {
+	position: relative;
+	top: -400px;*/
+
+
+.product {
+	position: relative;
+}
+
+.sold-out {
+	position: absolute;
+	top: 90px;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
