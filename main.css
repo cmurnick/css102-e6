@@ -66,8 +66,9 @@ body {
 
 
 
-
-
+.border-funsies {
+	border: 5px dashed purple;
+}
 
 
 
