@@ -1,8 +1,13 @@
+//no more var, let and const
+//fat arrow functions
+//object literal value shorthand notation
+// string template literals
+let poop = "crap";
+poop = 4;
 
+const allProducts = [];
 
-var allProducts = [];
-
-var product1 = {
+const product1 = {
   name: "Mop Attire",
   imagePath: "./images/mopAttire.jpg",
   imageAlt: "Product: Mop Attire",
@@ -11,7 +16,7 @@ var product1 = {
   soldOut: false
 };
 
-var product2 = {
+const product2 = {
   name: "Taco Suit",
   imagePath: "./images/tacoSuit.jpg",
   imageAlt: "Product: Taco Suit",
@@ -20,7 +25,7 @@ var product2 = {
   soldOut: false
 };
 
-var product3 = {
+const product3 = {
   name: "Neck Decoration",
   imagePath: "./images/neckDecoration.jpg",
   imageAlt: "Product: Neck Decoration",
@@ -29,7 +34,7 @@ var product3 = {
   soldOut: false
 };
 
-var product4 = {
+const product4 = {
   name: "Head Ornament",
   imagePath: "./images/headOrnament.jpg",
   imageAlt: "Product: Head Ornament",
@@ -38,7 +43,7 @@ var product4 = {
   soldOut: true
 };
 
-var product5 = {
+const product5 = {
   name: "Boob Hat",
   imagePath: "./images/boobHat.jpg",
   imageAlt: "Product: Boob Hat",
@@ -55,6 +60,14 @@ allProducts.push(product3);
 allProducts.push(product4);
 allProducts.push(product5);
 
+const addNewProduct = (name, imagePath, imageAlt, description, price, soldOut) => {
+  const newProduct = {name, imagePath, imageAlt, description, price, soldOut};
+    allProducts.push(newProduct);
+  };
+
+
+addNewProduct("Butt Cream", "https://upload.wikimedia.org/wikipedia/en/e/e8/Boudreauxs_Butt_Paste.jpg", "image.com", "ths is poop", 2.99, true) ;
+
 console.log("All my weird baby products:", allProducts);
 
 var productContainer = document.getElementById("product-container")
@@ -68,7 +81,7 @@ var productContainer = document.getElementById("product-container")
 // }
 
 
-function buildDomString(product) {
+const buildDomString = (product) => {
     var domString = "";
 
   domString +=          '<section class="product ">';
@@ -94,11 +107,11 @@ function buildDomString(product) {
 }
 
 
-function printProductArrayToDom(productArray) {
-  for (var i = 0; i < productArray.length; i++) {
+const printProductArrayToDom = (productArray) => {
+  for (let i = 0; i < productArray.length; i++) {
 // loop through the product and use the function buildDomString to generate hTML and insert into the page index html  @ the product container tab
-      var currentProduct = productArray[i];
-      var productDomString = buildDomString(currentProduct);
+      const currentProduct = productArray[i];
+      const productDomString = buildDomString(currentProduct);
     
      productContainer.innerHTML += productDomString;
   }
@@ -107,15 +120,15 @@ function printProductArrayToDom(productArray) {
 printProductArrayToDom(allProducts);
 
 
-var selectedCard;
+let selectedCard;
 
-document.getElementById("product-container").addEventListener("click", function(event){
+document.getElementById("product-container").addEventListener("click", (event) => {
   changeBorder(event);
   printSelectedDescription();
 })
 
 
-function changeBorder(event) {
+const changeBorder = (event) => {
     
     if (event.target.classList.contains("child")) {
       selectedCard = event.target.parentNode;
@@ -128,9 +141,9 @@ function changeBorder(event) {
    selectedCard.classList.add("border-funsies");
 }
 
-function printSelectedDescription() {
+const printSelectedDescription = () => {
 
-  var description = selectedCard.childNodes[2].childNodes[0].innerHTML;
+  const description = selectedCard.childNodes[2].childNodes[0].innerHTML;
   console.log(description);
 }
 
